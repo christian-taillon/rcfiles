@@ -64,7 +64,7 @@ alias vim="nvim"
 alias scp='rsync -avz'
 
 # Alias for managing dotfiles with a bare git repo
-alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias rcgit='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 # Alias's to show disk space and space used in a folder
 alias diskspace="du -S | sort -n -r |more"

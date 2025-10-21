@@ -1,0 +1,35 @@
+{
+    "yaml.schemas": {
+        "file:///home/christian/.vscode/extensions/continue.continue-1.2.9-linux-x64/config-yaml-schema.json": [
+            ".continue/**/*.yaml"
+        ]
+    },
+    "redhat.telemetry.enabled": true,
+    "continue.enableTabAutocomplete": false,
+    "window.menuBarVisibility": "compact",
+    "workbench.colorTheme": "Absolute Black",
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.editor.showTabs": "single",
+    "chat.commandCenter.enabled": false,
+    "python.analysis.typeCheckingMode": "basic",
+    "[dockercompose]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.autoIndent": "advanced",
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": false,
+            "strings": true
+        },
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "[github-actions-workflow]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "github.copilot.enable": {
+        "*": false,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false
+    }
+}

@@ -1,0 +1,5 @@
+[user]
+	email = public@christiant.io
+	name = Christian Taillon
+[init]
+	defaultBranch = main
