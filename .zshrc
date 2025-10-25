@@ -29,7 +29,7 @@ zinit light-mode for \
 ### Load Oh My Zsh and Plugins via Zinit ###
 zinit snippet OMZL::git.zsh
 zinit snippet OMZP::git
-zinit snippet OMZP::docker
+# zinit snippet OMZP::docker
 zinit light "wbingli/zsh-wakatime"
 zinit light "zsh-users/zsh-autosuggestions"
 zinit light "zsh-users/zsh-syntax-highlighting"
@@ -157,7 +157,7 @@ fi
 # ==============================================================================
 export MUTTER_DEBUG_DISABLE_HW_CURSORS=1 # Fix HW Mouse Stuttering
 fpath+=~/.zfunc # Add custom function directories to fpath
-source /home/christian/.config/broot/launcher/bash/br # Broot config
+# source /home/christian/.config/broot/launcher/bash/br # Broot config
 
 # ==============================================================================
 # Terminal and Key Bindings
