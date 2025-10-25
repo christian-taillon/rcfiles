@@ -4,7 +4,7 @@
 #bash options
 #export __LS_OPTIONS='--color=auto -h'
 #zsh options
-alias nvim='flatpak run io.neovim.nvim'
+# alias nvim='flatpak run io.neovim.nvim'
 
 alias desktop='echo "$(date +%Y) is year of the Linux desktop \n it always has been"'
 alias ctree='eza --tree --color=always --icons'
@@ -13,7 +13,7 @@ alias sudo='sudo '
 export __LS_OPTIONS='--color=always'
 
 alias "apt_up"="apt update && apt list --upgradable"
-
+alias "q"="exit"
 alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'
 
@@ -60,7 +60,7 @@ alias watchbonsai="cbonsai -l -i -w 10  -L 64 -b 2"
 # export PATH=/usr/local/cuda/bin:$PATH
 
 ## Prefered Software
-alias vim="nvim"
+# alias vim="nvim"
 alias scp='rsync -avz'
 
 # Alias for managing dotfiles with a bare git repo

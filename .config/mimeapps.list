@@ -1,0 +1,23 @@
+[Default Applications]
+x-scheme-handler/http=app.zen_browser.zen.desktop
+application/xhtml+xml=app.zen_browser.zen.desktop
+text/html=app.zen_browser.zen.desktop
+x-scheme-handler/https=app.zen_browser.zen.desktop
+x-scheme-handler/about=google-chrome.desktop
+x-scheme-handler/unknown=google-chrome.desktop
+x-scheme-handler/polarity=polarityx.desktop
+image/jpeg=com.github.maoschanz.drawing.desktop
+image/png=com.github.maoschanz.drawing.desktop
+image/bmp=com.github.maoschanz.drawing.desktop
+x-scheme-handler/mailto=org.gnome.Evolution.desktop
+
+[Added Associations]
+x-scheme-handler/http=com.google.Chrome.desktop;org.chromium.Chromium.desktop;chromium.desktop;app.zen_browser.zen.desktop;
+application/xhtml+xml=org.chromium.Chromium.desktop;
+text/html=com.google.Chrome.desktop;org.chromium.Chromium.desktop;chromium.desktop;app.zen_browser.zen.desktop;
+x-scheme-handler/https=com.google.Chrome.desktop;org.chromium.Chromium.desktop;chromium.desktop;app.zen_browser.zen.desktop;
+x-scheme-handler/sms=org.gnome.Shell.Extensions.GSConnect.desktop;
+x-scheme-handler/tel=org.gnome.Shell.Extensions.GSConnect.desktop;
+image/png=com.github.maoschanz.drawing.desktop;
+image/bmp=com.github.maoschanz.drawing.desktop;
+x-scheme-handler/mailto=org.gnome.Evolution.desktop;
