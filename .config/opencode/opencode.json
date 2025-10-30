@@ -22,8 +22,8 @@
                     "name": "gpt-oss:120b"
                 },
                 "minimax-m2:cloud": {
-                    "name": "minimax-m2:cloud"
-                },
+                    "name": "minimax-m2-cloud"
+                }
             }
         },
         "aichristiant": {
@@ -32,12 +32,12 @@
             "options": {
                 "baseURL": "https://ai.christiant.io/api",
                 "headers": {
-                    "Authorization": "Bearer {env:OPENAI_API_KEY}",
+                    "Authorization": "Bearer {env:OPENAI_API_KEY}"
                 }
             },
             "models": {
                 "gpt-oss-20b": {
-                    "name": "gpt-oss-20b",
+                    "name": "gpt-oss-20b"
                 },
                 "qwen3:30b-64k": {
                     "name": "qwen3:30b-64k"
@@ -88,6 +88,82 @@
             "enabled": true,
             "environment": {
                 "OLLAMA_API_KEY": "{env:OLLAMA_API_KEY}"
+            }
+        },
+        "github": {
+            "type": "remote",
+            "url": "https://api.githubcopilot.com/mcp/",
+            "headers": {
+                "Authorization": "Bearer {env:GITHUB_PAT_MCP}"
+            },
+            "enabled": true
+        }
+    },
+    "tools": {
+        "github_*": false
+    },
+    "permission": {
+        "github_*": "deny"
+    },
+    "agent": {
+        "plan": {
+            "description": "Planning and analysis agent that cannot make changes to code",
+            "mode": "all",
+            "model": "qwen3-coder",
+            "tools": {
+                "read": true,
+                "glob": true,
+                "grep": true,
+                "list": true,
+                "webfetch": true,
+                "write": false,
+                "edit": false,
+                "bash": false,
+                "chrome-devtools-mcp_*": false
+            },
+            "permission": {
+                "write": "deny",
+                "edit": "deny",
+                "bash": "deny",
+                "github_*": "deny",
+                "chrome-devtools-mcp_*": "deny"
+            }
+        },
+        "execute": {
+            "description": "Execute agent with all tools enabled except Chrome DevTools and GitHub operations",
+            "mode": "all",
+            "tools": {
+                "chrome-devtools-mcp_*": false,
+                "github_*": false
+            },
+            "permission": {
+                "github_*": "deny",
+                "chrome-devtools-mcp_*": "deny"
+            }
+        },
+        "github": {
+            "description": "GitHub agent for all GitHub operations including repository management, issues, pull requests, and code reviews",
+            "mode": "all",
+            "model": "gpt-oss-20b",
+            "tools": {
+                "github_*": true,
+                "read": true,
+                "write": true,
+                "edit": true,
+                "bash": true
+            },
+            "permission": {
+                "github_*": "allow"
+            }
+        },
+        "build-and-browse": {
+            "description": "Build and Browse agent with all tools plus Chrome DevTools access",
+            "mode": "all",
+            "tools": {
+                "chrome-devtools-mcp_*": true
+            },
+            "permission": {
+                "chrome-devtools-mcp_*": "allow"
             }
         }
     }
