@@ -25,3 +25,12 @@ fi
 unset rc
 
 source /home/christian/.config/broot/launcher/bash/br
+. "$HOME/.cargo/env"
+export PATH="$HOME/bin:$PATH"
+export EDITOR="nvim"
+export VISUAL="nvim"
+export SYSTEMD_EDITOR="nvim"
+export EDITOR="flatpak run io.neovim.nvim"
+export VISUAL="flatpak run io.neovim.nvim"
+export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/bin:$PATH"

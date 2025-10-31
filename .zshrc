@@ -70,26 +70,16 @@ compinit
 zstyle ':completion:*' menu select
 
 # ==============================================================================
-# Custom Functions & Completions for Flatpak Neovim (CORRECT & ROBUST METHOD)
+# Custom Functions & Completions for AppImage Neovim
 # ==============================================================================
-# A function is more reliable for completion than an alias.
 
 unalias nvim 2>/dev/null || true
 unalias vim 2>/dev/null || true
-nvim() {
-    # This function runs the flatpak command and passes all arguments ($@) to it.
-    flatpak run io.neovim.nvim "$@"
-}
 
-vim() {
-    # This function just calls our nvim function.
-    nvim "$@"
-}
+# Alias vim to nvim for compatibility
+alias vim='nvim'
 
-export EDITOR=vim
-
-# Now that the completion system is loaded and our functions are defined,
-# we can assign file completion rules to them.
+# Completion for nvim and vim
 compdef _files nvim
 compdef _files vim
 # ==============================================================================
@@ -131,26 +121,10 @@ export PATH
 export PATH="$HOME/.local/bin:$PATH" # Ensure .local/bin is present
 
 # ==============================================================================
-# Lazy-load NVM (Node Version Manager)
+# NVM (Node Version Manager)
 # ==============================================================================
 export NVM_DIR="$HOME/.nvm"
-if [[ -d "$NVM_DIR" ]]; then
-  nvm() {
-    unfunction nvm
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-    nvm "$@"
-  }
-  node() {
-    unfunction node; [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"; node "$@"
-  }
-  npm() {
-    unfunction npm; [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"; npm "$@"
-  }
-  yarn() {
-    unfunction yarn; [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"; yarn "$@"
-  }
-fi
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 # ==============================================================================
 # System-specific Settings
@@ -186,3 +160,7 @@ bindkey "^[[B" down-line-or-history
 # precmd_blank_line() { print '' }
 # precmd_functions+=( precmd_vcs_info precmd_blank_line )
 # PROMPT=$'╭─%K{#feb17f}%F{black}%B %n %b%f%k─\n╰─ %F{#a5a2a2}%~%f${vcs_info_msg_0_}\n  %F{#d56a26}● %f%F{#a5a2a2}'
+export EDITOR="nvim"
+export VISUAL="nvim"
+export SYSTEMD_EDITOR="nvim"
+export PATH="$HOME/bin:$PATH"

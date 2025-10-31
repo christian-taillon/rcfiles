@@ -8,3 +8,4 @@ fi
 # User specific environment and startup programs
 
 source /home/christian/.config/broot/launcher/bash/br
+. "$HOME/.cargo/env"
