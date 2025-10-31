@@ -66,6 +66,9 @@ alias scp='rsync -avz'
 # Alias for managing dotfiles with a bare git repo
 alias rcgit='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
+# Add opencode to PATH
+export PATH="$HOME/.opencode/bin:$PATH"
+
 # Alias's to show disk space and space used in a folder
 alias diskspace="du -S | sort -n -r |more"
 alias folders='du -h --max-depth=1'
