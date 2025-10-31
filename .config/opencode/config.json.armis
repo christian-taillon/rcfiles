@@ -1,0 +1,81 @@
+{
+    "$schema": "https://opencode.ai/config.json",
+    "share": "disabled",
+    "provider": {
+        "ollama": {
+            "npm": "@ai-sdk/openai-compatible",
+            "name": "Ollama (local)",
+            "options": {
+                "baseURL": "http://localhost:11434/v1"
+            },
+            "models": {
+                "qwen3-coder:480b-cloud": {
+                    "name": "qwen3-coder"
+                },
+                "kimi-k2:1t-cloud": {
+                    "name": "kimi-k2:1t-cloud"
+                },
+                "glm-4.6:cloud": {
+                    "name": "glm-4.6-cloud"
+                },
+                "gpt-oss:120b-cloud": {
+                    "name": "gpt-oss:120b"
+                }
+            }
+        },
+        "aichristiant": {
+            "npm": "@ai-sdk/openai-compatible",
+            "name": "aichristiant",
+            "options": {
+                "baseURL": "https://ai.christiant.io/api"
+            },
+            "models": {
+                "gpt-oss:20b": {
+                    "name": "gpt-oss:20b"
+                },
+                "qwen3:30b-64k": {
+                    "name": "qwen3:30b-64k"
+                },
+                "qwen3-coder:30b": {
+                    "name": "qwen3-coder:30b"
+                }
+            }
+        }
+    },
+    "agent": {
+        "adversary-emulator": {
+            "description": "Executes a single, specified Atomic Red Team test using PowerShell or bash.",
+            "mode": "primary",
+            "model": "qwen3-coder",
+            "prompt": "You are an automated agent that executes Atomic Red Team tests. You will be given a specific test GUID (e.g., T1059.001). Use the `Invoke-AtomicTest` command to run it. Capture and return only the raw output from the command.",
+            "tools": {
+                "bash": true,
+                "write": false,
+                "edit": false
+            }
+        }
+    },
+    "tools": {
+        "bash": true,
+        "edit": true,
+        "write": true,
+        "read": true,
+        "grep": true,
+        "glob": true,
+        "list": true,
+        "patch": true,
+        "todowrite": true,
+        "todoread": true,
+        "webfetch": true
+    },
+    "mcp": {
+        "armis-security-remote-mcp": {
+            "type": "remote",
+            "url": "https://gce.armis.com/mcp",
+            "headers": {
+                "Authorization": "Bearer {env:ARMIS_BEARER_TOKEN}"
+            },
+            "enabled": true
+        }
+    }
+}

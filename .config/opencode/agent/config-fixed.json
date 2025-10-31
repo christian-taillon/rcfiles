@@ -1,0 +1,58 @@
+{
+    "$schema": "https://opencode.ai/config.json",
+    "provider": {
+        "ollama": {
+            "npm": "@ai-sdk/openai-compatible",
+            "name": "Ollama (local)",
+            "options": {
+                "baseURL": "http://localhost:11434/v1"
+            },
+            "models": {
+                "qwen3-coder:480b-cloud": {
+                    "name": "qwen3-coder"
+                },
+                "kimi-k2:1t-cloud": {
+                    "name": "kimi-k2:1t-cloud"
+                },
+                "glm-4.6:cloud": {
+                    "name": "glm-4.6-cloud"
+                }
+            }
+        }
+    },
+    "agent": {
+        "adversary-emulator": {
+            "description": "Executes a single, specified Atomic Red Team test using PowerShell or bash.",
+            "mode": "primary",
+            "model": "qwen3-coder",
+            "prompt": "You are an automated agent that executes Atomic Red Team tests. You will be given a specific test GUID (e.g., T1059.001). Use the `Invoke-AtomicTest` command to run it. Capture and return only the raw output from the command.",
+            "tools": {
+                "bash": true,
+                "write": false,
+                "edit": false
+            }
+        },
+        "boss": {
+            "description": "Code Boss - plans and delegates coding tasks",
+            "mode": "all",
+            "model": "qwen3-coder",
+            "prompt_file": "boss.md"
+        },
+        "build": {
+            "description": "Build Agent - executes specific coding tasks",
+            "mode": "none",
+            "model": "qwen3-coder",
+            "prompt_file": "build.md"
+        }
+    },
+    "mcp": {
+        "armis-security-remote-mcp": {
+            "type": "remote",
+            "url": "https://gce.armis.com/mcp",
+            "headers": {
+                "Authorization": "Bearer 52d9338d31c1ae0d7b59ad7dc315b1e4e2e898f2592950b33527e390c5bdb426"
+            },
+            "enabled": true
+        }
+    }
+}

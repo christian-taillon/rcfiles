@@ -3,3 +3,5 @@
 	name = Christian Taillon
 [init]
 	defaultBranch = main
+[core]
+	excludesfile = /dev/null
