@@ -1,0 +1,77 @@
+# =============================================================================
+# Git Ignore File for Dotfiles
+# =============================================================================
+
+# System and cache directories
+.cache/
+.local/
+.ansible/
+.gtkrc-2.0-gtk-colors-pipe/
+.thumbnails/
+.dconf/
+.ICEauthority
+.Xauthority
+.recently-used.xbel
+.recently-used.xbel.B5X1Y6
+.xsession-errors*
+.xsession-errors
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+
+# Browser data
+.mozilla/
+.thunderbird/
+
+# IDE and editor files
+.vscode/
+.vim/
+.nvim/
+.mypy_cache/
+.pytest_cache/
+.coverage
+.tox/
+
+# Language specific
+node_modules/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+
+# Backup files
+*.bak
+*.backup
+
+# Large data directories
+Downloads/
+Videos/
+Music/
+Pictures/
+
+# =============================================================================
+# EXCEPTIONS - These override the ignores above
+# =============================================================================
+
+# Allow specific .local directories
+!.local/share/opencode/mcp-servers/
+!.local/bin/
+
+# Allow specific config directories
+!.config/nvim/
+!.config/git/
+!.local/share/flatpak/
+
+# Add more exceptions as needed
+# Example: !.local/share/some-important-app/
